@@ -3,9 +3,10 @@
 PortSystem          1.0
 PortGroup           haskell 1.0
 
-haskell.setup       regex-tdfa 1.2.0
-checksums           rmd160  e726c156f360f087ee936785c005e7dd3cc61e31 \
-                    sha256  fc82ac14aae378c543a55cdac3f944aae5bff9918c4a342e1da87d38ba4ef401
+haskell.setup       regex-tdfa 1.2.2
+checksums           rmd160  75994647dfe0124af777e3c6024337c05b93f914 \
+                    sha256  cb12d675be7b31ed8086d8d022023d03eb553e55dbee6e1b7a4154933d471d39 \
+                    size    65969
 
 license             BSD
 maintainers         {cal @neverpanic} openmaintainer

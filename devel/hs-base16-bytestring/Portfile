@@ -1,0 +1,15 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           haskell 1.0
+
+haskell.setup       base16-bytestring 0.1.1.6
+checksums           rmd160  a1dfb191490ac54b7a0a30ab76d77f67d8ce3c4d \
+                    sha256  5afe65a152c5418f5f4e3579a5e0d5ca19c279dc9bf31c1a371ccbe84705c449
+
+license             BSD
+maintainers         cal openmaintainer
+platforms           darwin
+
+description         Fast base16 (hex) encoding and decoding for ByteStrings
+long_description    ${description}

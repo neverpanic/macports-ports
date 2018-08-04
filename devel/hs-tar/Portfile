@@ -3,10 +3,9 @@
 PortSystem          1.0
 PortGroup           haskell 1.0
 
-haskell.setup       tar 0.4.0.1
-revision            3
-checksums           rmd160  87de253e69a99f6b6823944c1f2bfe93a182dfbf \
-                    sha256  a408274d8325f4e3144c5aa154d72f1ee7b0a7342570fd6805e3be3fe0d97a6d
+haskell.setup       tar 0.5.0.3
+checksums           rmd160  f4fd84c2f0cb18b9dcf7b59f04ea7de4f0e07586 \
+                    sha256  d8d9ad876365f88bdccd02073049e58715cd5ba94de06eb98e21d595244918a3
 
 license             BSD
 maintainers         {cal @neverpanic} openmaintainer

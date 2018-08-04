@@ -1,0 +1,32 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           haskell 1.0
+
+haskell.setup       hackage-security 0.5.2.2
+checksums           rmd160  8d76f780eae4f53f2a3b7116c3e468515e0eeee3 \
+                    sha256  507a837851264a774c8f4d400f798c3dac5be11dc428fe72d33ef594ca533c41
+
+maintainers         cal openmaintainer
+platforms           darwin
+license             BSD
+
+description         Hackage security library
+long_description    \
+    The hackage security library provides both server and client utilities for \
+    securing the Hackage package server (http://hackage.haskell.org/). It is \
+    based on The Update Framework (http://theupdateframework.com/), a set of \
+    recommendations developed by security researchers at various universities \
+    in the US as well as developers on the Tor project \
+    (https://www.torproject.org/).
+
+depends_lib-append  port:hs-base16-bytestring \
+                    port:hs-base64-bytestring \
+                    port:hs-cryptohash-sha256 \
+                    port:hs-ed25519 \
+                    port:hs-mtl \
+                    port:hs-network \
+                    port:hs-network-uri \
+                    port:hs-parsec \
+                    port:hs-tar \
+                    port:hs-zlib
