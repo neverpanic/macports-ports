@@ -11,7 +11,7 @@ PortGroup           cargo_fetch 1.0
 github.setup        containers libkrun 1.15.1 v
 github.tarball_from archive
 
-revision            0
+revision            1
 
 categories          emulators
 license             Apache-2
@@ -38,7 +38,7 @@ depends_lib         port:libepoxy \
 use_configure       no
 
 # Build and installation options per upstream's docs are passed as environment variables.
-build.env-append    EFI=1 GPU=1
+build.env-append    EFI=1 GPU=1 PREFIX=${prefix}
 destroot.env-append EFI=1 GPU=1 PREFIX=${prefix}
 
 # Patch upstream's Makefile to respect CARGO_BUILD_TARGET as that is automatically set by MacPorts and also to set correct install_name.
