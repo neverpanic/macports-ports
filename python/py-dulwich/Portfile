@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-dulwich
-version             0.24.7
+version             1.2.22
 revision            0
 
 categories-append   devel
@@ -19,17 +19,15 @@ long_description    Simple Pure-Python implementation of the Git file \
 homepage            https://www.dulwich.io
 
 checksums           ${distname}${extract.suffix} \
-                    rmd160  027a1ec4ba9f395968963d1da9153c6f3b750bda \
-                    sha256  f10bffa1395a8dedc3d38ac05164f761ae838a6a18f9a09a966f27dd651850d4 \
-                    size    968411
+                    rmd160  c290baeff1814a8864abaef9c708ed4bcf2bfbcf \
+                    sha256  be6ec253943069b5393f7f8c21dcb3f2aea784329829c74fbcc39d98a99f3bb0 \
+                    size    1454346
 
 python.versions     310 311 312 313 314
 
 set dulwich_darwin_min_ver 11
 
 if {${name} ne ${subport}} {
-    patchfiles      patch-archflags.diff
-
     depends_lib-append \
                     port:py${python.version}-urllib3
 
@@ -48,26 +46,26 @@ if {${name} ne ${subport}} {
                     port:py${python.version}-setuptools-rust
 
         # sudo cargo update
-        # egrep -e '^(name|version|checksum) = ' Cargo.lock | perl -pe 's/^(?:name|version|checksum) = "(.+)"/$1/' | tr '\n' ' ' | perl -pe 's|([0-9a-f]{64})|\1 \\\n|g' | pbcopy
+        # perl -0777 -lne 'print "$+{name} $+{version} $+{checksum} \\\n" while /name = "(?<name>[^"]+)"\nversion = "(?<version>[^"]+)"\nsource = "[^"]+"\nchecksum = "(?<checksum>[^"]+)"/mg' Cargo.lock
         cargo.crates \
-            autocfg 1.5.0 c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8 \
+            bstr 1.13.1 6bb31b46c14244e20ee9984b11bf5c992b91fb6939fea616e3512c8baecdbe5f \
             heck 0.5.0 2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea \
-            indoc 2.0.6 f4c7245a08504955605670dbf141fceab975f15ca21570696aebe9d2e71576bd \
-            libc 0.2.177 2874a2af47a2325c2001a6e6fad9b16a53b802102b528163885171cf92b15976 \
-            memchr 2.7.6 f52b00d39961fc5b2736ea853c9cc86238e165017a493d1d5c8eac6bdc4cc273 \
-            memoffset 0.9.1 488016bfae457b036d996092f6cb448677611ce4449e970ceaf42695203f218a \
-            once_cell 1.21.3 42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d \
-            portable-atomic 1.11.1 f84267b20a16ea918e43c6a88433c2d54fa145c92a811b5b047ccbe153674483 \
-            proc-macro2 1.0.101 89ae43fd86e4158d6db51ad8e2b80f313af9cc74f5c0e03ccb87de09998732de \
-            pyo3 0.27.0 fa8e48c12afdeb26aa4be4e5c49fb5e11c3efa0878db783a960eea2b9ac6dd19 \
-            pyo3-build-config 0.27.0 bc1989dbf2b60852e0782c7487ebf0b4c7f43161ffe820849b56cf05f945cee1 \
-            pyo3-ffi 0.27.0 c808286da7500385148930152e54fb6883452033085bf1f857d85d4e82ca905c \
-            pyo3-macros 0.27.0 83a0543c16be0d86cf0dbf2e2b636ece9fd38f20406bb43c255e0bc368095f92 \
-            pyo3-macros-backend 0.27.0 2a00da2ce064dcd582448ea24a5a26fa9527e0483103019b741ebcbe632dcd29 \
-            quote 1.0.41 ce25767e7b499d1b604768e7cde645d14cc8584231ea6b295e9c9eb22c02e1d1 \
-            syn 2.0.107 2a26dbd934e5451d21ef060c018dae56fc073894c5a7896f882928a76e6d081b \
-            target-lexicon 0.13.3 df7f62577c25e07834649fc3b39fafdc597c0a3527dc1c60129201ccfcbaa50c \
-            unicode-ident 1.0.19 f63a545481291138910575129486daeaf8ac54aee4387fe7906919f7830c7d9d \
-            unindent 0.2.4 7264e107f553ccae879d21fbea1d6724ac785e8c3bfc762137959b5802826ef3
+            libc 0.2.191 65cd87c9a6d60536580b316ad985726104730a5151c99845f2490428ef91240a \
+            memchr 2.8.3 cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98 \
+            once_cell 1.21.4 9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50 \
+            portable-atomic 1.15.0 05c8b63e8d9609db387f0324918f81d68fe27748f084ef092fb35954d0539a85 \
+            proc-macro2 1.0.107 985e7ec9bb745e6ce6535b544d84d6cd6f7ad8bd711c398938ae983b91a766d9 \
+            pyo3 0.30.1 229ca13b8a15bb0d1487b81ab975bfcd97513416499a8312011b6036e42e0de4 \
+            pyo3-build-config 0.30.1 70130e2b6dd1ee589a8788026a429561ca5c40fa7a2fa7914c2282eddae24700 \
+            pyo3-ffi 0.30.1 5e7ff73c555c286d212d4ce7e5fbda845a973c4f61bd5f160f5f2c3c2a04d1c4 \
+            pyo3-macros 0.30.1 c46d2e5862c7bb8207e3b639f713dda3c499933444784154c11d013c5a691b60 \
+            pyo3-macros-backend 0.30.1 38b89f066f2ae72a2aef52d1537ca2fcd104440ebfadee06e97aa90738a25b9b \
+            quote 1.0.47 1fbf4db142a473a8d80c26bbf18454ed458bf8d26c8219c331daecfdbd079001 \
+            serde_core 1.0.229 67dca2c9c51e58a4791a4b1ed58308b39c64224d349a935ab5039aa360942a48 \
+            serde_derive 1.0.229 e7a5d71263a5a7d47b41f6b3f06ba276f10cc18b0931f1799f710578e2309348 \
+            similar 3.2.1 d2f8bec09ae8fae0f4f265a4559a9334be3929d8504e9b536df0a41302bd1733 \
+            syn 3.0.9 d78c8dee4c7bf0e14673097256fed6142ce9d3b85a408189d07482442145823b \
+            target-lexicon 0.13.5 adb6935a6f5c20170eeceb1a3835a49e12e19d792f6dd344ccc76a985ca5a6ca \
+            unicode-ident 1.0.27 a2c754d6c33795a1c324727428e5a7dedb5b06195f9890bdbcba760d3e246563
     }
 }
