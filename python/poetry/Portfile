@@ -4,8 +4,8 @@ PortSystem              1.0
 PortGroup               python 1.0
 
 name                    poetry
-version                 2.2.1
-revision                1
+version                 2.5.2
+revision                0
 
 categories-append       devel
 platforms               {darwin any}
@@ -24,9 +24,9 @@ long_description        Poetry: Dependency Management for Python. \
 
 homepage                https://python-poetry.org/
 
-checksums               rmd160  87d6ec9ce78436800e2df141b8f1cdb08b6f1b75 \
-                        sha256  bef9aa4bb00ce4c10b28b25e7bac724094802d6958190762c45df6c12749b37c \
-                        size    3441978
+checksums               rmd160  0695f9c89ae74815ff6eab4c3be4b5ca674c3d99 \
+                        sha256  131d6a565f809436918a5aafed34e7013038fc73b4f7b64640dc278f14adc4ea \
+                        size    3324724
 
 variant python310 conflicts python311 python312 python313 python314 description {Use Python 3.10} {}
 variant python311 conflicts python310 python312 python313 python314 description {Use Python 3.11} {}
